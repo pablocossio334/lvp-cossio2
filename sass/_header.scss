@@ -1,0 +1,44 @@
+
+/*HEADER*/
+.header{
+    margin-top: 1rem;
+    .header__logo__img {
+        @include tamano(map-get($header,logo-alto),map-get($header,logo-ancho));
+        margin-bottom: 1rem;
+        object-fit: scale-down;
+        animation: "anima__logo" 2s alternate infinite;
+    }
+    .header__logo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height:15rem;
+        .header__logo__texto {
+            display: inline-block;
+            width: 100%;
+            color: map-get($header,color-texto-logo);
+            font-size: map-get($header,tam-texto-logo);
+            text-align: center;
+            animation: "inclina_texto"2s alternate infinite;
+        }
+    }
+    .header__banner{
+        background-image: map-get($header,imagen-banner);
+        padding:0;
+    }
+}
+/*HEADER*/
+//responsive header////////////////////////////////
+@media (max-width: 947px) {
+.header{
+    .header__logo__img{
+        display:flex;
+        z-index:9999999;
+        height:9rem;
+        width:9rem;
+    }
+   }
+    
+    
+    
+}

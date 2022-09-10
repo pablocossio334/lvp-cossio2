@@ -1,0 +1,106 @@
+//MAPS GENERALES//
+@mixin tamano($alto,$ancho)
+{
+    height:$alto;
+    width:$ancho;
+};
+
+$estilos:(
+color-textos:white,
+background-color:black,
+fuente-main-size:2rem,
+h1-font:'Alumni Sans Inline One',
+h1-font2: cursive,
+h1-font-size:3rem,
+h1-textdecoration:underline red,
+h2-font:'Abril Fatface',
+h2-font2: cursive,
+h2-textdecoration:underline rgb(0, 81, 255),
+fuente-main:"'Courier New', Courier, monospace",
+fondo-pagina:url("../img/photo-1604147495798-57beb5d6af73.jpg"),
+
+);
+//MAPS HEADER//
+$header:(
+        tam-texto-logo:0.8rem,
+        color-texto-logo:white,
+        imagen-banner:url("../img/barras.gif"),
+        logo-ancho:12rem,
+        logo-alto:12rem,
+);
+//MAPS-FOOTER
+$footer:(
+    font-size-footer:0.7rem,
+    color-texto:white,
+    logo-redes-h:1.4rem,
+    logo-redes-w:1.4rem,
+);
+
+//MAPS NAV
+$nav:(
+    fuente-menu:cursive,
+    color-texto-menu:white,
+    fuente-menu-size:1.3rem,
+    background-color-dropdown:black,
+    color-hover:red,
+);
+//MAPS INDEX//
+$index:(
+ancho-portada:100%,
+alto-portada:80%,
+);
+//ESTILOS CAROUSEL//
+$carousel:(
+titulo-size:1rem,
+titulo-shadow:0 0 4px red,
+carousel-media-size:100%,
+);
+//MAPS-QUIENES//
+$quienes:(
+fuente-quienes:'uchen',
+fuente-quienes2: 'serif',
+color-fuente:white,
+background-color-card:black,
+);
+$quienes-card:(
+    ancho:15rem,
+    alto:20rem,
+    background-color:black,
+    font-color:white,
+    font-size:1rem,
+);
+//MAPS-FOTOS///
+$fotos:(
+
+alto-miniatura:10rem,
+ancho-album:80%,
+color-borde-modal:gray,
+color-fondo-modal:black,
+position-modal:50%,
+);
+//MAPS-MUSICA//
+$musica:(
+    fondo-reproductor:rgb(3, 0, 0),
+    ancho-reproductor:80%,
+    color-texto-pantalla:green,
+    fondo-pantalla:url("../img/Unusual-Sound-Waves.gif"),
+    texto-pantalla-size:2rem,
+    altura-pantalla:4rem,
+    alto-boton:4rem,
+    ancho-boton:4rem,
+    font-boton-size:2rem,
+    font-size-lista:2rem,
+    color-texto:white,
+    logoh:8rem,
+    logow:8rem,
+);
+
+//MAPS-CONTACTO//
+
+$redes:(
+    fuente-redes: 'Lobster',
+    color-facebook:blue,
+    color-instagram:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%),
+    color-youtube:red,
+    color-whatsapp:green,
+)

@@ -1,0 +1,90 @@
+
+
+/*QUIENES*/
+.main__quienes{
+    
+    .main__quienes__p {
+    font-family:map-get($quienes,fuente-quienes),map-get($quienes,fuente-quienes2);
+    font-size:1.5rem;
+    color:map-get($quienes,color-fuente);
+    margin: 1rem 3rem;
+    text-align: justify;
+    text-indent: 2rem;
+    color:map-get($quienes,color-textos);
+}
+}
+.main__quienes__integrantes{
+
+display:flex;
+align-content:center;
+justify-content:center;
+margin-bottom: 1rem;
+
+
+.card__int__front, .card__int__back, .card__int {
+@include tamano(map-get($quienes-card,alto),map-get($quienes-card,ancho));
+margin:1rem;
+color:black;
+}
+
+.card__int__front, .card__int__back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__int__front {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/fondocard.jpg");
+    background-size:100% 100%;
+    z-index: 2;
+    transition: all 0.3s linear;
+    background-color:white;
+    h3{
+        font-size:1.5rem;
+    }
+    .card__int__front__img{
+        width:95%;
+        height:10rem;
+        border:2px solid blACK;
+    }
+
+}
+
+.card__int__back {
+    transition: all 0.3s linear;
+    transform: rotateY(180deg);
+    background-image: url("../img/naipe.jpg");
+    background-size: 100% 100%;
+    border:2px solid white;
+}
+
+.card__int {
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    perspective: 1000px;
+
+}
+
+.card__int:hover .card__int__front {
+    transform: rotateY(180deg);
+}
+
+.card__int:hover .card__int__back {
+    transform: rotateY(360deg);
+}
+}
+
+
+/*RESPONSIVE QUIENES*/
+
+
+/*RESPONSIVE QUIENES*/
+/*QUIENES*/

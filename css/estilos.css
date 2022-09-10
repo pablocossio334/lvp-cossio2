@@ -1,0 +1,732 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Uchen&display=swap");
+@font-face {
+  font-family: digital;
+  src: url("css/digital7.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/photo-1604147495798-57beb5d6af73.jpg");
+  color: white;
+}
+
+h1 {
+  font-family: "Alumni Sans Inline One", cursive;
+  text-shadow: 0 0 4px red;
+  font-size: 3rem;
+  color: white;
+  margin: 1rem 0 1rem 0;
+  text-decoration: underline red;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 1rem;
+  color: white;
+  font-family: "Abril Fatface", "Abril Fatface";
+  text-decoration: underline rgb(0, 81, 255);
+  text-align: center;
+}
+
+main, .main__contacto, .main__section__musica {
+  width: 100%;
+  min-height: 55rem;
+  font-family: "'Courier New', Courier, monospace";
+  font-size: 2rem;
+  animation-name: entra_contenido;
+  animation-duration: 2s;
+  overflow: auto;
+}
+
+/*RESPONSIVE GENERALES*/
+@media (max-width: 989px) {
+  main, .main__contacto, .main__section__musica {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .footer__redes {
+    align-items: flex-start;
+  }
+  .footer__redes footer p {
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .footer__redes {
+    justify-content: flex-end;
+  }
+  .footer__redes img {
+    margin: 0rem;
+    align-self: flex-start;
+    height: 0.3rem;
+    width: 0.3rem;
+  }
+  footer p {
+    font-size: 0, 3rem;
+  }
+}
+/*ESTILOS GENERALES*/
+/*HEADER*/
+.header {
+  margin-top: 1rem;
+}
+.header .header__logo__img {
+  height: 12rem;
+  width: 12rem;
+  margin-bottom: 1rem;
+  object-fit: scale-down;
+  animation: "anima__logo" 2s alternate infinite;
+}
+.header .header__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15rem;
+}
+.header .header__logo .header__logo__texto {
+  display: inline-block;
+  width: 100%;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+  animation: "inclina_texto" 2s alternate infinite;
+}
+.header .header__banner {
+  background-image: url("../img/barras.gif");
+  padding: 0;
+}
+
+/*HEADER*/
+@media (max-width: 947px) {
+  .header .header__logo__img {
+    display: flex;
+    z-index: 9999999;
+    height: 9rem;
+    width: 9rem;
+  }
+}
+/*FOOTER*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid;
+  height: 4rem;
+  font-size: 0.7rem;
+  padding-left: 2rem;
+}
+
+.enlace__redes, .main__contacto .redes__lista__vertical a {
+  position: relative;
+  display: block;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  text-align: center;
+  transition: 0.5s;
+  transform: translate(0, 0px);
+}
+
+.redes__lista {
+  padding: 0;
+  display: flex;
+}
+.redes__lista li {
+  list-style: none;
+  margin: 0 10px;
+  margin-top: 0.5rem;
+}
+.redes__lista li .fa {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 50px;
+  transition: 0.5s;
+}
+.redes__lista li:nth-child(1) a:hover {
+  border-style: none;
+  background-color: blue;
+}
+.redes__lista li:nth-child(2) a:hover {
+  border-style: none;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.redes__lista li:nth-child(3) a:hover {
+  border-style: none;
+  background-color: red;
+}
+.redes__lista li:nth-child(4) a:hover {
+  border-style: none;
+  background-color: green;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 1rem;
+  }
+  .footer .footer__copyright, .footer .footer__design,
+.footer .redes__lista {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+  }
+}
+/*FOOTER*/
+nav {
+  font-family: cursive;
+  font-size: 1.3rem;
+  border-bottom: 1px solid;
+}
+nav .navbar-toggler-icon {
+  color: white;
+}
+nav .nav-link {
+  color: white;
+  margin-right: 2rem;
+}
+nav .nav-link:hover,
+nav .dropdown-item:hover {
+  color: white;
+}
+nav .dropdown-item:hover {
+  background-color: black;
+}
+nav .link:hover {
+  background-color: red;
+  filter: drop-shadow(16px 16px 20px red);
+}
+nav .dropdown-menu {
+  background-color: black;
+}
+nav .dropdown-item {
+  color: white;
+}
+
+/*ANIMACION BOTON MENU*/
+.navbar-toggler {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 40px 15px 0px;
+}
+.navbar-toggler span, .navbar-toggler span:before, .navbar-toggler span:after {
+  transition: all 500ms ease-in-out;
+  border-radius: 1px;
+  height: 5px;
+  width: 40px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: "";
+}
+.navbar-toggler span:after {
+  bottom: -10px;
+}
+.navbar-toggler span:before {
+  top: -10px;
+}
+
+.navbar-toggler.active span, .navbar-toggler.active span:after, .navbar-toggler.active span:before {
+  background-color: transparent;
+}
+.navbar-toggler.active span:before, .navbar-toggler.active span:after {
+  background-color: rgb(240, 234, 234);
+  top: 0;
+}
+.navbar-toggler.active span:after {
+  transform: rotate(-45deg);
+}
+.navbar-toggler.active span:before {
+  transform: rotate(45deg);
+}
+
+/*ANIMACION BOTON MENU*/
+@media (max-width: 675px) {
+  nav {
+    background-color: black;
+    opacity: 0.5;
+  }
+}
+/*INDEX*/
+.main__index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__index__portada {
+  height: 80%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 55rem;
+}
+
+.carousel-inner {
+  display: flex;
+}
+.carousel-inner .carousel__article {
+  display: flex;
+  flex-direction: column;
+}
+.carousel-inner .carousel__article .carousel__item__titulo {
+  text-decoration: none;
+  text-align: center;
+}
+.carousel-inner .carousel__article .carousel__item__media {
+  height: 35rem;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  aside {
+    height: auto;
+  }
+  .main__index__portada {
+    object-fit: cover;
+  }
+  .carousel-inner .carousel__article .carousel__item__titulo {
+    font-size: 1.5rem;
+  }
+  .carousel-inner .carousel__article .carousel__item__media {
+    height: auto;
+  }
+}
+/*QUIENES*/
+.main__quienes .main__quienes__p {
+  font-family: "uchen", "serif";
+  font-size: 1.5rem;
+  color: white;
+  margin: 1rem 3rem;
+  text-align: justify;
+  text-indent: 2rem;
+}
+
+.main__quienes__integrantes {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.main__quienes__integrantes .card__int__front, .main__quienes__integrantes .card__int__back, .main__quienes__integrantes .card__int {
+  height: 20rem;
+  width: 15rem;
+  margin: 1rem;
+  color: black;
+}
+.main__quienes__integrantes .card__int__front, .main__quienes__integrantes .card__int__back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main__quienes__integrantes .card__int__front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/fondocard.jpg");
+  background-size: 100% 100%;
+  z-index: 2;
+  transition: all 0.3s linear;
+  background-color: white;
+}
+.main__quienes__integrantes .card__int__front h3 {
+  font-size: 1.5rem;
+}
+.main__quienes__integrantes .card__int__front .card__int__front__img {
+  width: 95%;
+  height: 10rem;
+  border: 2px solid blACK;
+}
+.main__quienes__integrantes .card__int__back {
+  transition: all 0.3s linear;
+  transform: rotateY(180deg);
+  background-image: url("../img/naipe.jpg");
+  background-size: 100% 100%;
+  border: 2px solid white;
+}
+.main__quienes__integrantes .card__int {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.main__quienes__integrantes .card__int:hover .card__int__front {
+  transform: rotateY(180deg);
+}
+.main__quienes__integrantes .card__int:hover .card__int__back {
+  transform: rotateY(360deg);
+}
+
+/*RESPONSIVE QUIENES*/
+/*RESPONSIVE QUIENES*/
+/*QUIENES*/
+/*FOTOS*/
+.main__fotos {
+  align-content: center;
+}
+
+.main__fotos__album {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+}
+.main__fotos__album .main__fotos__album__foto img {
+  height: 10rem;
+  width: auto;
+  object-fit: contain;
+  border: 0.5rem solid black;
+  border-top: 0.5rem dashed white;
+  border-bottom: 0.5rem dashed white;
+}
+.main__fotos__album .main__fotos__album__foto img:hover {
+  filter: drop-shadow(16px 20px 20px rgb(224, 91, 15));
+  transform: scale(1.4);
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+.windows__modal {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  color: gray;
+  border-style: solid;
+  top: 50%;
+  z-index: 9999999;
+  animation-name: anima_ventana;
+  animation-duration: 2s;
+  background-color: black;
+  align-items: left;
+}
+.windows__modal figure {
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.windows__modal figure img {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
+}
+.windows__modal input {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  float: right;
+}
+
+@media (max-width: 675px) {
+  .windows__modal {
+    width: 100vw;
+    height: 90vh;
+    margin-left: 2rem;
+  }
+  .windows__modal figure {
+    border-style: solid;
+    display: block;
+    justify-content: center;
+  }
+  .windows__modal figure img {
+    object-fit: scale-down;
+  }
+}
+/*VIDEOS*/
+.main__section__videos {
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.main__section__videos .main__section__videos__youtube {
+  height: 30rem;
+  width: 100%;
+}
+
+@media (max-width: 476px) {
+  .main__section__videos {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .main__section__videos .main__section__videos__youtube {
+    height: 20rem;
+    width: 100%;
+  }
+}
+/*VIDEOS*/
+.main__section__musica {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.main__section__musica figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/fuego.gif");
+  background-size: 100%, 10%;
+  height: 10rem;
+  width: 100%;
+  border-bottom: solid;
+}
+.main__section__musica figure .logo {
+  height: 8rem;
+  width: 8rem;
+}
+
+.reproductor {
+  background-color: rgb(3, 0, 0);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 80%;
+}
+.reproductor .reproductor__timing {
+  margin: 1rem;
+  height: 2rem;
+  width: 5rem;
+  background-color: black;
+  color: green;
+  border-color: green;
+  text-align: center;
+}
+.reproductor .reproductor__pantalla {
+  display: flex;
+  color: green;
+  text-shadow: 0 0 4px red;
+  border-style: solid;
+  font-weight: bold;
+  font-size: 2rem;
+  align-items: center;
+  background-image: url("../img/Unusual-Sound-Waves.gif");
+  border-radius: 5%;
+  height: 4rem;
+}
+.reproductor .reproductor__boton {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: rgb(3, 0, 0);
+  border: 2px solid white;
+  align-self: center;
+  font-size: 2rem;
+  color: white;
+  margin: 1rem;
+}
+.reproductor .reproductor__boton:hover {
+  background-color: white;
+  color: black;
+}
+.reproductor .reproductor__lista {
+  font-size: 2rem;
+}
+.reproductor .reproductor__lista li {
+  border-bottom: dotted;
+}
+.reproductor .track {
+  color: white;
+  list-style: none;
+}
+.reproductor .reproductor__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/*RESPONSIVE MUSICA*/
+@media (max-width: 600px) {
+  .reproductor .reproductor__boton {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+  }
+  .track {
+    font-size: 1rem;
+  }
+  .main__section__musica .reproductor {
+    width: 100%;
+  }
+  .main__section__musica .reproductor__volumen {
+    display: none;
+  }
+  .main__section__musica figure {
+    height: auto;
+  }
+  .main__section__musica figure .logo {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+/*RESPONSIVE MUSICA*/
+/*MUSICA*/
+/*CONTACTO*/
+.main__contacto__form,
+.main__contacto__redes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__contacto input:focus,
+.main__contacto textarea:focus {
+  border: 4px solid rgb(255, 85, 0);
+  filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+  animation-delay: 2s;
+}
+
+.main__send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36rem;
+}
+
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.contenedor .main__send__cuadro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: dotted;
+  justify-content: center;
+}
+.contenedor .main__send__cuadro h1 {
+  font-size: 5rem;
+}
+
+.main__contacto .main__contacto__redes {
+  border-left-style: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__contacto .redes__lista__vertical {
+  justify-content: center;
+  font-size: 2rem;
+}
+.main__contacto .redes__lista__vertical :nth-child(1) a {
+  border-style: none;
+  background-color: blue;
+}
+.main__contacto .redes__lista__vertical :nth-child(2) a {
+  border-style: none;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.main__contacto .redes__lista__vertical :nth-child(3) a {
+  border-style: none;
+  background-color: red;
+}
+.main__contacto .redes__lista__vertical :nth-child(4) a {
+  border-style: none;
+  background-color: green;
+}
+.main__contacto .redes__lista__vertical li {
+  display: flex;
+  margin-top: 1rem;
+}
+.main__contacto .redes__lista__vertical li p {
+  font-family: "Lobster";
+}
+.main__contacto .redes__lista__vertical a {
+  margin-right: 1rem;
+}
+.main__contacto .redes__lista__vertical a:hover {
+  filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+  transform: rotate(45deg);
+}
+.main__contacto .redes__lista__vertical p:hover {
+  filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+  animation-delay: 2s;
+}
+.main__contacto .btn-danger {
+  margin: 1rem 0;
+}
+.main__contacto .btn-danger:hover {
+  filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+  animation-delay: 2s;
+}
+
+@media (max-width: 980px) {
+  .main__contacto .main__contacto__redes {
+    border-style: none;
+  }
+}
+@media (max-width: 680px) {
+  .main__contacto .main__contacto__redes li p {
+    font-size: 1.3rem;
+  }
+}
+@keyframes anima__logo {
+  from {
+    filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+  }
+  to {
+    filter: drop-shadow(16px 16px 20px rgba(224, 92, 15, 0.084));
+  }
+}
+@keyframes entra_contenido {
+  from {
+    transform: translate(-100%, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes anima_ventana {
+  0% {
+    height: 0vh;
+    width: 0;
+  }
+  50% {
+    height: 100vh;
+    width: 0;
+  }
+  100% {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+@keyframes inclina_texto {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

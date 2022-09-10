@@ -1,0 +1,143 @@
+/*CONTACTO*/
+
+
+.main__contacto__form,
+.main__contacto__redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main__contacto {
+    input:focus,
+    textarea:focus {
+        border: 4px solid rgb(255, 85, 0);
+        filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+        animation-delay: 2s;
+    }
+}
+.main__send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36rem;
+}
+.contenedor{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    .main__send__cuadro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-style: dotted;
+        justify-content: center;
+        h1{
+            font-size:5rem;
+        }
+    }
+}
+
+.main__contacto {
+    @extend main;
+    .main__contacto__redes {
+        border-left-style: double;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .redes__lista__vertical {
+        
+        justify-content: center;
+        font-size: 2rem;
+        
+        :nth-child(1) {
+            a {
+                border-style: none;
+                background-color: map-get($redes, color-facebook);
+            }
+
+        }
+
+        :nth-child(2) {
+            a {
+                border-style: none;
+                background: map-get($redes, color-instagram);
+            }
+
+        }
+
+        :nth-child(3) {
+            a {
+                border-style: none;
+                background-color: map-get($redes, color-youtube);
+            }
+
+        }
+
+        :nth-child(4) {
+            a {
+                border-style: none;
+                background-color: map-get($redes, color-whatsapp);
+            }
+            
+        }
+
+        li {
+            display: flex;
+            margin-top: 1rem;
+            p{
+                font-family: map-get($redes, fuente-redes);
+            }
+        }
+
+        a {
+            @extend .enlace__redes;
+            margin-right: 1rem;
+
+        }
+        a:hover{
+            filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+            transform:rotate(45deg)
+        }
+        p:hover{
+            filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+            animation-delay: 2s;
+        }
+    }
+
+    .btn-danger {
+        margin: 1rem 0;
+    }
+    .btn-danger:hover{
+        filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+        animation-delay: 2s;
+    }
+}
+@media (max-width: 980px) {
+
+    .main__contacto {
+        
+        .main__contacto__redes {
+            border-style:none;
+        }
+    }
+}
+@media (max-width: 680px) {
+
+    .main__contacto {
+        
+        .main__contacto__redes {
+            li{
+                p{
+                    font-size:1.3rem;
+                }
+            }
+        }
+    }
+}

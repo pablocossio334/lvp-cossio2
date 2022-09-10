@@ -1,0 +1,26 @@
+/*VIDEOS*/
+$altovideo:30rem;
+$anchovideo:100%;
+.main__section__videos{
+    display:flex;
+    justify-items:center;
+    align-content: center;
+    justify-content: center;
+   .main__section__videos__youtube
+    { 
+        @include tamano($altovideo,$anchovideo);
+    }
+}
+@media (max-width: 476px){
+    .main__section__videos{
+        display:flex;
+        justify-items:center;
+        align-content: center;
+        justify-content: center;
+        .main__section__videos__youtube
+        { 
+            @include tamano(($altovideo)-10,$anchovideo);
+        }
+    }
+}
+/*VIDEOS*/

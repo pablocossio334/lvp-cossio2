@@ -1,0 +1,132 @@
+.main__section__musica {
+    @extend main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("../img/fuego.gif");
+        background-size: (100%, 10%);
+        @include tamano(10rem, 100%);
+        border-bottom: solid;
+
+        .logo {
+            @include tamano(map-get($musica, logoh), map-get($musica, logow));
+
+        }
+    }
+}
+
+
+.reproductor {
+    background-color: map-get($musica, fondo-reproductor);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+     align-self: flex-start;
+    width: map-get($musica, ancho-reproductor);
+
+    .reproductor__timing {
+        margin: 1rem;
+        @include tamano(2rem, 5rem);
+        background-color: black;
+        color: map-get($musica, color-texto-pantalla);
+        border-color:green;
+        text-align: center;
+    }
+
+    .reproductor__pantalla {
+        display: flex;
+        color: map-get($musica, color-texto-pantalla);
+        text-shadow: 0 0 4px red;
+        border-style: solid;
+        font-weight: bold;
+        font-size: map-get($musica, texto-pantalla-size);
+        align-items: center;
+        background-image: map-get($musica, fondo-pantalla);
+        border-radius: 5%;
+        height: map-get($musica, altura-pantalla);
+    }
+
+    .reproductor__boton {
+        @include tamano(map-get($musica, alto-boton), map-get($musica, ancho-boton));
+        border-radius: 50%;
+        background-color: map-get($musica, fondo-reproductor);
+        border: 2px solid map-get($musica, color-texto);
+        align-self: center;
+        font-size: map-get($musica, font-boton-size);
+        color: map-get($musica, color-texto);
+        margin: 1rem;
+
+    }
+
+    .reproductor__boton:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .reproductor__lista {
+        font-size: map-get($musica, font-size-lista);
+
+        li {
+            border-bottom: dotted;
+        }
+    }
+
+    .track {
+        color: map-get($musica, color-texto);
+        list-style: none;
+    }
+
+    .reproductor__controles {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        color: map-get($musica, color-texto);
+
+    }
+}
+
+/*RESPONSIVE MUSICA*/
+@media (max-width: 600px) {
+
+    .reproductor {
+        .reproductor__boton {
+            @include tamano((map-get($musica, alto-boton))-2, (map-get($musica, ancho-boton))-2);
+            font-size: 1rem;
+        }
+    }
+
+    .track {
+        font-size: 1rem;
+    }
+
+    .main__section__musica {
+        .reproductor {
+            width: 100%;
+        }
+
+        .reproductor__volumen {
+            display: none;
+        }
+
+        figure {
+            height: auto;
+
+            .logo {
+                height: 12rem;
+                width: 12rem;
+            }
+        }
+    }
+
+}
+
+
+/*RESPONSIVE MUSICA*/
+/*MUSICA*/

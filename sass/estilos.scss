@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Uchen&display=swap');
+@import "_vars";
+@font-face {
+    font-family: digital;
+     src: url("css/digital7.ttf");
+ }
+
+
+
+
+
+$main-h:55rem;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+    background-image:map-get($estilos,fondo-pagina);
+    color:white;
+
+}
+
+h1 {
+    font-family:map-get($estilos,h1-font),map-get($estilos,h1-font2);
+    text-shadow: 0 0 4px red;
+    
+    font-size: map-get($estilos,h1-font-size);
+    color:map-get($estilos,color-textos);
+    margin: 1rem 0 1rem 0;
+    text-decoration:map-get($estilos,h1-textdecoration);
+    text-align: center;
+
+}
+h2 {
+    margin-top: 1rem;
+    color:map-get($estilos,color-textos);
+    font-family:map-get($estilos,h2-font),map-get($estilos,h2-font);
+    text-decoration:map-get($estilos,h2-textdecoration); 
+    text-align: center;
+    
+}
+main {
+    
+    width: 100%;
+    min-height:$main-h;
+    font-family: map-get($estilos,fuente-main);
+    font-size:map-get($estilos,fuente-main-size);
+    animation-name: entra_contenido ;
+    animation-duration:2s;
+    overflow:auto;
+    
+}
+/*RESPONSIVE GENERALES*/
+@media(max-width: 989px){
+    main{
+        display:flex;
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        font-size:1rem;
+    }
+    .footer__redes{
+        align-items: flex-start;
+    
+    }
+    
+    .footer__redes{
+    footer p{
+        font-size: 0.5rem;
+        
+    }
+}
+}
+
+@media (max-width: 576px){
+    .footer__redes
+    {
+        justify-content:flex-end;
+        img {
+            margin:0rem;
+            align-self:flex-start;
+        @include tamano(0.3rem,0.3rem);
+        }
+
+    
+    }
+    footer{
+        p{
+            font-size:0,3rem;
+        }
+    }
+
+}
+/*ESTILOS GENERALES*/
+@import "_header";
+@import "_footer";
+@import "_nav";
+@import "_index";
+@import "_quienes";
+@import "_fotos";
+@import"_videos";
+@import"_musica";
+@import "_contacto";
+@import "_animaciones";
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+@keyframes anima__logo {
+    from {
+        filter: drop-shadow(16px 16px 20px rgb(224, 91, 15));
+    }
+
+    to {
+        filter: drop-shadow(16px 16px 20px rgba(224, 92, 15, 0.084));
+    }
+}
+@keyframes entra_contenido {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes anima_ventana {
+    0% {
+        height:0vh;
+        width:0;
+    }
+
+    50%{
+        height:100vh;
+        width:0;
+    }
+    100%{
+        height:100vh;
+        width:100vw;
+    }
+}
+@keyframes inclina_texto {
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
+}

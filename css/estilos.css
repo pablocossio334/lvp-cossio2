@@ -87,6 +87,10 @@ main, .main__contacto, .main__section__musica {
   object-fit: scale-down;
   animation: "anima__logo" 2s alternate infinite;
 }
+.header .header__logo__img:hover {
+  transform: rotate(360deg);
+  transition-duration: 4s;
+}
 .header .header__logo {
   display: flex;
   flex-direction: column;

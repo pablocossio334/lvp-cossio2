@@ -8,6 +8,10 @@
         object-fit: scale-down;
         animation: "anima__logo" 2s alternate infinite;
     }
+    .header__logo__img:hover{
+        transform:rotate(360deg);
+        transition-duration: 4s;
+    }
     .header__logo{
         display: flex;
         flex-direction: column;
